@@ -36,7 +36,9 @@ export class DeckPage {
       let plusCard = isNeutral ?  this.neutralCards.find(c=>c.id=== card.id) : this.classCards.find(c=>c.id=== card.id);
       plusCard.count++; //llamado por referencia
 
-      this.choosenCards.push(card);
+      if(!this.choosenCards.find(c=>c.id === card.id)){
+        this.choosenCards.push(plusCard);
+      }
     }
 
 }
