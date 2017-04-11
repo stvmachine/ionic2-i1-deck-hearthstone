@@ -28,7 +28,7 @@ export class DeckPage {
       this.cardRest.getCards().subscribe(response=>{
           let data= JSON.parse(response._body);
           this.classCards= data.cards.filter(c=> c.hero=== this.classNameUser).sort((n1,n2) => n1.mana - n2.mana).map((c)=>{ c.count=0; return c;});
-          this.neutralCards= data.cards.filter(c=> c.hero=== 'neutral').sort((n1,n2) => n1.mana - n2.mana).map((c)=>{ c.count=0; return c;});;
+          this.neutralCards= data.cards.filter(c=> c.hero=== 'neutral').sort((n1,n2) => n1.mana - n2.mana).map((c)=>{ c.count=0; return c;});
       });
     }
 
@@ -38,6 +38,7 @@ export class DeckPage {
 
       if(!this.choosenCards.find(c=>c.id === card.id)){
         this.choosenCards.push(plusCard);
+        this.choosenCards= this.choosenCards.sort((n1,n2) => n1.mana - n2.mana);
       }
     }
 
