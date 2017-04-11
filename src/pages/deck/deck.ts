@@ -12,6 +12,8 @@ export class DeckPage {
   classCards: Array<any>= [];
   neutralCards: Array<any>= [];
 
+  choosenCards: Array<any>= [];
+
   cards: string;
 
   constructor(
@@ -25,9 +27,16 @@ export class DeckPage {
 
       this.cardRest.getCards().subscribe(response=>{
           let data= JSON.parse(response._body);
-          this.classCards= data.cards.filter(c=> c.hero=== this.classNameUser).sort((n1,n2) => n1.mana - n2.mana);
-          this.neutralCards= data.cards.filter(c=> c.hero=== 'neutral').sort((n1,n2) => n1.mana - n2.mana);
+          this.classCards= data.cards.filter(c=> c.hero=== this.classNameUser).sort((n1,n2) => n1.mana - n2.mana).map((c)=>{ c.count=0; return c;});
+          this.neutralCards= data.cards.filter(c=> c.hero=== 'neutral').sort((n1,n2) => n1.mana - n2.mana).map((c)=>{ c.count=0; return c;});;
       });
+    }
+
+    addDeck(card, isNeutral:boolean= false){
+      let plusCard = isNeutral ?  this.neutralCards.find(c=>c.id=== card.id) : this.classCards.find(c=>c.id=== card.id);
+      plusCard.count++; //llamado por referencia
+
+      this.choosenCards.push(card);
     }
 
 }
