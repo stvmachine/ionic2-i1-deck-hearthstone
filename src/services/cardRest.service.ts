@@ -17,12 +17,8 @@ export class CardRestService {
     openFile(urlFile: string){
       return this.http.get(urlFile)
       .map(res => res)
-      .catch(this.handleError);
+      .catch(error=>{
+        return Observable.throw(error.json().error || 'Server error');
+      });
     };
-
-    handleError(error) {
-      console.error(error);
-      return Observable.throw(error.json().error || 'Server error');
-    };
-
   }
