@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { DeckPage } from '../deck/deck';
 
 @Component({
   selector: 'page-home',
@@ -7,7 +8,7 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
   heroes:Array<{className:string, image: string}>;
-  constructor(public navCtrl: NavController) {  
+  constructor(public navCtrl: NavController) {
     this.heroes=[
       { className: 'warrior', image: '/images/garrosh.png' },
       { className: 'shaman', image: '/images/thrall.png' },
@@ -19,6 +20,12 @@ export class HomePage {
       { className: 'mage', image: '/images/jaina.png' },
       { className: 'priest', image: '/images/anduin.png' }
     ];
+  }
+
+  chooseClass(hero: {className:string, image: string}){
+    this.navCtrl.push(DeckPage, {
+
+    });
   }
 
 }
