@@ -6,8 +6,10 @@ import { MyApp } from './app.component';
 import { DeckPage } from '../pages/deck/deck';
 import { HomePage } from '../pages/home/home';
 
+import { CardRestService } from '../services/cardRest.service';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { HttpModule} from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -28,6 +31,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    CardRestService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -7,5 +7,11 @@
 </ion-header>
 
 <ion-content padding>
-
+  <ion-row>
+    <ion-col col-4 *ngFor="let card of classCards">
+      <ion-card>
+        <img src="{{card.image_url}}"/>
+     </ion-card>
+    </ion-col>
+  </ion-row>
 </ion-content>

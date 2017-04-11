@@ -22,9 +22,9 @@ export class HomePage {
     ];
   }
 
-  chooseClass(hero: {className:string, image: string}){
+  chooseClass(className:string){
     this.navCtrl.push(DeckPage, {
-
+      'className': className
     });
   }
 
