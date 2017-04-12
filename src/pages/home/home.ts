@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { DeckPage } from '../deck/deck';
 
 @Component({
   selector: 'page-home',
@@ -20,12 +19,6 @@ export class HomePage {
       { className: 'mage', image: '/images/jaina.png' },
       { className: 'priest', image: '/images/anduin.png' }
     ];
-  }
-
-  chooseClass(className:string){
-    this.navCtrl.push(DeckPage, {
-      'className': className
-    });
   }
 
 }
