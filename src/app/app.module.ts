@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { DeckPage } from '../pages/deck/deck';
 import { HomePage } from '../pages/home/home';
 
 import { CardRestService } from '../services/cardRest.service';
@@ -14,7 +13,6 @@ import { HttpModule} from '@angular/http';
 @NgModule({
   declarations: [
     MyApp,
-    DeckPage,
     HomePage,
   ],
   imports: [
@@ -25,7 +23,6 @@ import { HttpModule} from '@angular/http';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    DeckPage,
     HomePage,
   ],
   providers: [
