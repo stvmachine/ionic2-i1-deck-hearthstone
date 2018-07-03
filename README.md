@@ -12,12 +12,10 @@ npm run ionic:serve
 ```
 
 ## Why does this repository exist?
-In one of the companies where i worked I did practical classes related with Ionic 2 and Typescript. 
-
+In one of the companies where I worked, I did practical classes related to Ionic 2 and Typescript to my coworkers.
+I wanted to do a fun class so I choose a card game called Hearthstone and the exercise was build a deck builder.
 
 ## Screenshots
 
-![Landing](/screenshots/1.png?raw=true)
-
-![Modal to request](/screenshots/2.png?raw=true) ![Modal answer](/screenshots/3.png?raw=true)
+![Landing](/screenshots/1.png?raw=true) ![Card Deck](/screenshots/2.png?raw=true) 
 
