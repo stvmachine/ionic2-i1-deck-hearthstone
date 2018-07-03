@@ -1,3 +1,11 @@
 page-deck {
-
+    .card-content-md {
+        padding: 0;
+    }
+    .card-count{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        font-size: 18px;
+    }
 }
