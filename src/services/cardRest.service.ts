@@ -11,7 +11,7 @@ export class CardRestService {
   };
 
     getCards(){
-      return this.openFile('cards/all-collectibles.json');
+      return this.openFile('assets/cards/all-collectibles.json');
     }
 
     openFile(urlFile: string){
